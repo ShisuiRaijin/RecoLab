@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href=img/logo_tienda.png>
+    <title>Tu tienda</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Agrego bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+</head>
+<body>
+
+    <!-- Esta es la cabecera con el logo de la página -->
+    <header> 
+        <div class="container col-lg-2 col-md-3 col-sm-3 col-xs-3">
+            <img class= "img-fluid" src="img/tienda1.png" alt="Logo de Tu Tienda">
+        </div> 
+    </header>
+    
+
+    <!-- A partir de aqui, el cuerpo de la página desde la barra de navegación -->
+    <main class="pb-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/sale.png" width="30" height="30" class="d-inline-block align-top" alt="image for sale">
+                Tu tienda en línea
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             
+            <!-- Barra de navegación -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formulario.html">Crear tienda</a> 
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#">Ofertas</a> 
+                    </li>
+
+                    <!-- Aca va el desplegable CATEGORIAS-->
+                    <li class="nav-item dropdown"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorias
+                        </a>
+
+                        <!-- Opciones del desplegable CATEGORIAS -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Alimentos y bebidas</a>
+                            <a class="dropdown-item" href="#">Educación</a>
+                            <a class="dropdown-item" href="#">Entretenimiento</a>
+                            <a class="dropdown-item" href="#">Salud</a>
+                            <a class="dropdown-item" href="#">Tiendas de artículos varios</a>
+                            <a class="dropdown-item" href="#">Transporte</a>
+                            <a class="dropdown-item" href="#">Vestimenta</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Otros</a>
+                        </div>
+                    </li>
+
+                    <!-- Aca va el desplegable AYUDA -->
+                    <li class="nav-item dropdown"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ayuda
+                        </a>
+
+                        <!-- Opciones del desplegable AYUDA -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Acerca de Tu Tienda</a>
+                            <a class="dropdown-item" href="#">Manual para crear tu tienda</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Contáctanos</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav mr-2 justify-content-end">
+
+                    <!-- Aca va el desplegable INGRESAR -->
+                    <li class="nav-item dropdown"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ingresar         
+                        </a>
+
+                        <!-- Formulario de ingreso a la cuenta -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <form class="px-4 py-3">
+
+                                <!-- Para ingresar el correo electrónico -->
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormEmail1">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@ejemplo.com">
+                                </div>
+
+                                <!-- Para ingresar la contraseña -->
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormPassword1">Contraseña</label>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña">
+                                </div>
+
+                                <!-- Opción para recordar contraseña  -->
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
+                                        Recordar contraseña
+                                    </label>
+                                </div>
+
+                                <!-- Botón para acceder -->
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+
+                            </form>
+
+                            <div class="dropdown-divider"></div>
+
+                            <!-- Opciones de ingreso -->
+                            <a class="dropdown-item" href="formulario.html">¿Eres nuevo?, regístrate</a>
+                            <a class="dropdown-item" href="#">¿Olvidaste la contraseña?</a>
+
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Barra de búsqueda -->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Busca una tienda" aria-label="Search">
+                        <button id="search-button" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav> 
+
+
+    <!-- ************* Empieza el formulario para crear tienda ***************** -->
+    <div class="container col-xl-5 col-lg-7 col-md-7 col-sm-11 col-xs-12 mt-5 pb-5 pt-5 pl-5 pr-5 rounded" id="formulario_container" >
+   
+        <form>
+            <!-- Nombre de la tienda -->
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="nombre">Nombre de la tienda</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de la tienda" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputContrasenia">Contraseña</label>
+                    <input type="password" class="form-control" id="inputContrasenia" placeholder="Ingrese una contraseña" required>
+                </div>
+            </div>
+
+            <!-- Dirección de la tienda -->
+            <div class="form-group">
+                <label for="inputAddress">Dirección</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Dirección" required>
+            </div>
+
+            <!-- Correo electrónico -->
+            <div class="form-group">
+                <label for="inputemail">Correo electrónico</label>
+                <input type="email" class="form-control" id="inputemail" placeholder="Correo electónico" required>
+            </div>
+
+            <!-- Celular -->
+            <div class="form-group">
+                <label for="inputtelefono">Celular</label>
+                <input type="tel" pattern="[0-9]{9}" class="form-control" id="inputtelefono" placeholder="Celular" required>
+            </div>
+
+            <!-- Categoría -->
+            <div class="form-group">
+                <label for="inputcategoria">Categoría </label>
+                <select id="inputcategoria" class="form-control">
+                    <option value="0" selected>Tienda de artículos varios</option>
+                    <option value="1">Alimentos y bibidas</option>
+                    <option value="2">Educación</option>
+                    <option value="3">Entretenimiento</option>
+                    <option value="4">Salud</option>
+                    <option value="5">Transporte</option>
+                    <option value="6">Vestimenta</option>
+                </select>
+            </div>
+          
+            <!-- Cargar imagen de portada o logo -->
+            <div class="form-group">
+                <label for="cargaimg">Imágen de portada</label>
+                <input type="file" class="form-control-file" id="cargaimg" required>
+            </div>
+       
+            <button type="submit" class="btn btn-primary" id="btn_crear">
+            Crear
+            </button>
+
+        </form>
+    </div>
+</main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer container-fluid bg-dark">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h6 class="text-muted">
+                    <br>
+                    <br>
+                        Proyecto primer año b_IT / Tu Tienda<br>
+                        Equipo RecoLab - Grupo Litoral<br>
+                    </h6>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-12 text-center">
+                    <p class="text-muted small">
+                    imauror98@gmail.com<br>
+                    juantrottatorres@gmail.com<br>
+                    jjpf85@gmail.com<br>
+                    benelliraul@gmail.com<br>
+                    camilachoca44@gmail.com<br>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Agrego archivos js -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/comportamiento.js"></script>
+</body>
+</html>

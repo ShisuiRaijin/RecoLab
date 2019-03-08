@@ -1,0 +1,58 @@
+
+header{
+    background-color: #343a40;
+    text-align: center;
+    height: 120px;
+}
+
+#mini_logo{
+    width: 100px;
+    height: 40px;
+}
+
+
+.carousel-item img{
+    width:70%;
+    height:300px;
+    margin:auto;
+}
+
+.carousel{
+        height:400px;
+}
+
+main{
+    background-image: url('fondo1.jpg');
+    background-position-x: center;
+}
+
+.carousel{
+    padding-top: 50px;
+    padding-bottom:50px;
+    margin-right:-15px;
+    margin-left:-15px;
+    margin-bottom:30px;
+    background-color:rgba(33, 63, 8,0.5);
+}
+
+header div{
+    height:100%;
+}
+
+header div img{
+    position: relative;
+    top:-30px;
+}
+
+#formulario_container{
+    background-color: rgba(123, 171, 83, 0.8 );
+}
+
+.verdecito{
+background-color:  rgba(199, 228, 188);
+color: black;
+}
+
+.verde_clarito{
+    background-color: rgba(216, 240, 207);
+}
