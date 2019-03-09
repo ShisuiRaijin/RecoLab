@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a98187c-8af6-429c-af08-94816d4366d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackEnd/database/common/Base_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/common/claseproducto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/common/db_base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/common/db_productos.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/database/common/Products_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/common/db_tiendas.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/database/common/Stores_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/database/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/database/Manager_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/resources/Tienda/Tienda.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/resources/Tienda/Store.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="8a98187c-8af6-429c-af08-94816d4366d8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
