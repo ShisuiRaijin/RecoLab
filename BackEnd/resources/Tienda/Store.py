@@ -1,4 +1,4 @@
-class Tienda:
+class Store:
     # Construir tienda
     def __init__ (self, id_tienda, nombre_tienda,direccion_tienda,
                   categoria,imagen_portada_tienda,contacto):
@@ -27,9 +27,9 @@ class Tienda:
         print("Se ha modificado la imagen de portada")
 
 
-    # Borrar Tienda
+    # Borrar Store
     def __del__(self):
-        print("Se ha borrando la Tienda", self.id_tienda)
+        print("Se ha borrando la Store", self.id_tienda)
     
     # Mostrar datos de la tienda
     def __str__(self):

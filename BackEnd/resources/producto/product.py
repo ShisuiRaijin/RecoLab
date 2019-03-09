@@ -1,6 +1,6 @@
     # Clase Productos
 
-class Producto:
+class Product:
     def __init__ (self,nombre_producto,descripcion_producto,imagen_producto,precio_producto,id_producto=0,id_tienda=0):
         self.nombre_producto = nombre_producto
         self.descripcion_producto = descripcion_producto
@@ -26,7 +26,7 @@ class Producto:
         self.precio_producto = nueva_precio_producto
         return("Se ha modificado el precio del producto a $ ",nueva_precio_producto)
 
-    # Borrar Producto
+    # Borrar Product
     def __del__(self):
         return("Se ha borrado el producto",self.id_producto)
     

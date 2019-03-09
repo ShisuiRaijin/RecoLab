@@ -1,18 +1,18 @@
 import sqlite3
-from App.BackEnd.database.common.db_base import Basedatos
-# from claseproducto import Producto
+from BackEnd.database.common.Base_db import Base_db
+from BackEnd.resources.producto.product import Product
 
-class Db_productos(Basedatos):
+class Products_db():
     """Permite interactuar con la tabla productos."""
     
-    def agregar_producto(self,producto,tienda):
-        """Recibe objeto Producto a guardar y  objeto Tienda al que esta relacionado.
+    def agregar_producto(self, producto, tienda):
+        """Recibe objeto Product a guardar y  objeto Store al que esta relacionado.
         
         Asigna automaticamente un id unico a cada producto y lo relaciona con el id su tienda,
         No se insertaran productos cuando exista otro registro con el cual coincida exactamente
         la combinacion de los datos de 'nombre', 'descripcion','ruta_imagen'
         e 'id_tienda_madre' """
-        # # if isinstance(producto,Producto):
+        # # if isinstance(producto,Product):
         #
         #     datos_producto = [producto.nombre_producto, producto.descripcion_producto,
         #                 producto.imagen_producto, producto.precio_producto, tienda.id_tienda]
@@ -34,44 +34,40 @@ class Db_productos(Basedatos):
         requeridos, id del producto, nombre de la columna a modificar y el dato nuevo."""
 
         try:
-            self.conectar_base_datos()
             self.cursor.execute("UPDATE productos SET {} = ? WHERE id = ?;"
 								.format(nombre_columna), [datos_nuevos, id_producto])
             self.commit()
-            self.cerrar_conexion()
-            
+
         except sqlite3.OperationalError :
             return False
     
     def no_hay_coincidencias_producto(self):
-        return(Producto('nulo','nulo','nulo','nulo'))
+        return(Product('nulo', 'nulo', 'nulo', 'nulo'))
 
     def devolver_lista_productos(self,producto):
         """ Se utiliza internamente, toma una lista con los resultados de una 
-        consulta a la tabla productos, devuelve una lista de objetos Producto"""
+        consulta a la tabla productos, devuelve una lista de objetos Product"""
 
         lista_productos = []
         for registro in producto:
-                objeto=Producto(registro[1],registro[2],registro[3],
-                            registro[4],registro[0],registro[5])
+                objeto=Product(registro[1], registro[2], registro[3],
+                               registro[4], registro[0], registro[5])
                 lista_productos.append(objeto)
         return(lista_productos)
 
     def extraer_productos_tienda(self,id_tienda=''): 
-        """Recibe un id de Tienda, retorna lista de todos los objetos Producto relacionados 
+        """Recibe un id de Store, retorna lista de todos los objetos Product relacionados
         a ella. Si no se le especifica el parametro devuelve 20 productos al azar"""
 
-        if type(id_tienda)==int:
+        if type(id_tienda) == int:
             id_tienda='WHERE id_tienda_madre ={} '.format(id_tienda)
         else:
             id_tienda='ORDER BY random() LIMIT 20'
         
-        self.conectar_base_datos()
-        self.cursor.execute( " SELECT * FROM productos {};".format(id_tienda))
+        self.cursor.execute(" SELECT * FROM productos {};".format(id_tienda))
         
         productos = self.cursor.fetchall()
-        self.cerrar_conexion()
-        if len(productos)==0:
+        if len(productos) == 0:
             return [self.no_hay_coincidencias_producto()]
         else:
             return self.devolver_lista_productos(productos)
@@ -91,7 +87,6 @@ class Db_productos(Basedatos):
         if columna != 'nombre' and columna != 'descripcion' and columna != 'precio':
             columna = 'nombre||descripcion||precio'
 
-        self.conectar_base_datos()
         if orden != 'desc' and orden != 'asc' and orden !='aleatorio':
             orden='desc'
         if orden == "aleatorio":
@@ -100,7 +95,6 @@ class Db_productos(Basedatos):
             self.cursor.execute("SELECT * FROM productos WHERE {} LIKE '%{}%' ORDER BY id_producto {} LIMIT ?;".format(columna,contiene,orden),[n])
             
         productos = self.cursor.fetchall()
-        self.cerrar_conexion()
         if len(productos)==0:
             return [self.no_hay_coincidencias_producto()]
         else:
@@ -110,7 +104,6 @@ class Db_productos(Basedatos):
 
         """Recibe id_producto e id_tienda y borra el producto"""
         try:
-            self.conectar_base_datos()
             self.cursor.execute("DELETE FROM productos WHERE id_producto = ? AND id_tienda_madre = ?;",[id_producto,id_tienda])
             self.commit()
         except sqlite3.OperationalError :

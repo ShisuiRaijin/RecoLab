@@ -44,19 +44,19 @@ tienda_fields = {
 }
 
 #
-# tienda = Tienda(args['id_tienda'],              args['nombre_tienda'],
+# tienda = Store(args['id_tienda'],              args['nombre_tienda'],
 #                         args['direccion_tienda'],       args['categoria'],
 
 
 db = Manager()
-db.agregar_tienda(Tienda(111, "test", "sarasa street", "random", "fake_url.com", "01101010"))
-tiendas = db.extraer_todas_tiendas()
+db.add_store(Tienda(111, "test", "sarasa street", "random", "fake_url.com", "01101010"))
+tiendas = db.get_all_stores()
 
 class TiendaEndpoint(Resource):
 
     @marshal_with(tienda_fields)
     def get(self, id_tienda):
-        tienda = db.extraer_tienda(id_tienda)
+        tienda = db.get_store(id_tienda)
         return tienda
 
     @marshal_with(tienda_fields)
